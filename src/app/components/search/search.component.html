@@ -1,15 +1,19 @@
 <main>
   <div class="form-field">
     <label for="origen">Origen</label>
-    <input type="text" />
+    <input type="text" list="data-list" />
   </div>
   <div class="form-field">
     <label for="destino">Destino</label>
-    <input type="text" />
+    <input type="text" list="data-list" />
   </div>
   <button type="button">Buscar</button>
 
   <div id="search-container">
     <a class="line red" href="">5</a>
   </div>
+
+  <datalist id="data-list">
+    <option *ngFor="let data of dataset" value="{{ data }}"></option>
+  </datalist>
 </main>
