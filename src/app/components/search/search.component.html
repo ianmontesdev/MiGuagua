@@ -1,16 +1,32 @@
 <main>
-  <div class="form-field">
-    <label for="origen">Origen</label>
-    <input type="text" list="data-list" />
-  </div>
-  <div class="form-field">
-    <label for="destino">Destino</label>
-    <input type="text" list="data-list" />
-  </div>
-  <button type="button">Buscar</button>
-
+  <form [formGroup]="searchForm">
+    <div class="form-field">
+      <label for="form-from">Origen</label>
+      <input
+        type="text"
+        id="form-from"
+        formControlName="formFrom"
+        list="data-list"
+      />
+    </div>
+    <div class="form-field">
+      <label for="form-to">Destino</label>
+      <input
+        type="text"
+        id="form-to"
+        formControlName="formTo"
+        list="data-list"
+      />
+    </div>
+    <button type="button" (click)="findGuaguas()">Buscar</button>
+  </form>
   <div id="search-container">
-    <a class="line red" href="">5</a>
+    <a
+      class="line"
+      *ngFor="let line of foundGuaguas"
+      [ngStyle]="{ 'background-color': line[3] }"
+      >{{ line[0] }}</a
+    >
   </div>
 
   <datalist id="data-list">

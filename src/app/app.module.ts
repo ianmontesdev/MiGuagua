@@ -8,10 +8,18 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchComponent } from './components/search/search.component';
 import { RoutesComponent } from './components/routes/routes.component';
 import { HomeComponent } from './components/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, NavComponent, HeaderComponent, SearchComponent, RoutesComponent, HomeComponent],
-  imports: [BrowserModule, routing],
+  declarations: [
+    AppComponent,
+    NavComponent,
+    HeaderComponent,
+    SearchComponent,
+    RoutesComponent,
+    HomeComponent,
+  ],
+  imports: [BrowserModule, routing, ReactiveFormsModule],
   providers: [AppRoutingProviders],
   bootstrap: [AppComponent],
 })
