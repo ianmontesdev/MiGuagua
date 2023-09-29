@@ -1,0 +1,21 @@
+ul {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 30px;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  background: var(--yellow-dark, #fdca01);
+  width: max-content;
+  color: var(--blue-dark);
+}
+
+.active {
+  color: white;
+}

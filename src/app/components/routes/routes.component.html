@@ -1,0 +1,42 @@
+<main>
+  <div class="routes-container">
+    <div *ngFor="let line of lines">
+      <span
+        (click)="showLine(line)"
+        class="line-square"
+        [ngStyle]="{ 'background-color': line[3] }"
+        >{{ line[0] }}</span
+      >
+    </div>
+  </div>
+  <div class="route-detail">
+    <!--Ruta de ida-->
+    <div *ngIf="lineDetail != ''" class="route-go">
+      <span class="route-from"
+        >Desde {{ lineDetail[0][0][0] }} hasta
+        {{ lineDetail[0][lineDetail[0].length - 1][0] }}</span
+      >
+      <ul>
+        <li *ngFor="let lineGo of lineDetail[0]">
+          <div></div>
+          <div></div>
+          {{ lineGo[0] }}
+        </li>
+      </ul>
+    </div>
+    <!--Ruta de vuelta-->
+    <div *ngIf="lineDetail != ''" class="route-go">
+      <span class="route-from"
+        >Desde {{ lineDetail[1][0][0] }} hasta
+        {{ lineDetail[1][lineDetail[1].length - 1][0] }}</span
+      >
+      <ul>
+        <li *ngFor="let lineGo of lineDetail[1]">
+          <div></div>
+          <div></div>
+          {{ lineGo[0] }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</main>
